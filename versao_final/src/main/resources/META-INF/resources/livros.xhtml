@@ -1,0 +1,59 @@
+<ui:composition template="/templates/template.xhtml" 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="title">Livros</ui:define>
+
+    <ui:define name="content">
+        <h1>📚 Lista de Livros</h1>
+
+        <h:form>
+            <h:dataTable value="#{bibliotecaBean.livros}" var="livro" border="1" style="width:100%; border-collapse:collapse;">
+                
+                <h:column>
+                    <f:facet name="header">Título</f:facet>
+                    #{livro.titulo}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">ISBN</f:facet>
+                    #{livro.isbn}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Autor</f:facet>
+                    #{livro.autor.nome}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Data Publicação</f:facet>
+                    #{livro.dataPublicacao}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Páginas</f:facet>
+                    #{livro.numeroPaginas}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Disponível?</f:facet>
+                    <h:outputText value="#{livro.disponivel ? '✅ Sim' : '❌ Não'}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Ação</f:facet>
+
+                    <!-- Botão sempre visível -->
+                    <h:commandButton value="📖 Emprestar"
+                                     action="#{bibliotecaBean.realizarEmprestimo(livro.id)}"
+                                     style="padding:5px;"
+                                     ajax="false"/>
+
+                </h:column>
+
+            </h:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>
