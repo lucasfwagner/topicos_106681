@@ -11,7 +11,6 @@ public class Emprestimo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Se preferir gravar apenas o username (do security), pode adicionar um campo username.
     @Column(name = "nomeUsuario", nullable = false, length = 100)
     private String nomeUsuario;
 

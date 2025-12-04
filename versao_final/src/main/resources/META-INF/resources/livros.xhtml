@@ -45,11 +45,14 @@
                 <h:column>
                     <f:facet name="header">Ação</f:facet>
 
-                    <!-- Botão sempre visível -->
                     <h:commandButton value="📖 Emprestar"
                                      action="#{bibliotecaBean.realizarEmprestimo(livro.id)}"
                                      style="padding:5px;"
-                                     ajax="false"/>
+                                     update="@form"/>
+                    <h:commandButton value="📖 Devolver"
+                                     action="#{bibliotecaBean.devolverLivro(livro.id)}"
+                                     style="padding:5px;"
+                                     update="@form"/>
 
                 </h:column>
 

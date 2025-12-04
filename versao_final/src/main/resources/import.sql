@@ -48,39 +48,39 @@ VALUES (6, 'Clarice Lispector', 'clarice@literatura.com', 'Autora de A Hora da E
 -- LIVROS
 -- ============================================================
 
-INSERT INTO livros (id, titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
-VALUES (1, 'Dom Casmurro', '9788535914849', 256, '1899-01-01', TRUE, 1);
+INSERT INTO livros (titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
+VALUES ('Dom Casmurro', '9788535914849', 256, '1899-01-01', TRUE, 1);
 
-INSERT INTO livros (id, titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
-VALUES (2, 'Orgulho e Preconceito', '9780141439518', 279, '1813-01-28', TRUE, 2);
+INSERT INTO livros (titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
+VALUES ('Orgulho e Preconceito', '9780141439518', 279, '1813-01-28', TRUE, 2);
 
-INSERT INTO livros (id, titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
-VALUES (3, '1984', '9780451524935', 328, '1949-06-08', TRUE, 3);
+INSERT INTO livros (titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
+VALUES ('1984', '9780451524935', 328, '1949-06-08', TRUE, 3);
 
-INSERT INTO livros (id, titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
-VALUES (4, 'Harry Potter e a Pedra Filosofal', '9780747532699', 309, '1997-06-26', TRUE, 4);
+INSERT INTO livros (titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
+VALUES ( 'Harry Potter e a Pedra Filosofal', '9780747532699', 309, '1997-06-26', TRUE, 4);
 
-INSERT INTO livros (id, titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
-VALUES (5, 'O Senhor dos Anéis: A Sociedade do Anel', '9780618640157', 423, '1954-07-29', FALSE, 5);
+INSERT INTO livros (titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
+VALUES ('O Senhor dos Anéis: A Sociedade do Anel', '9780618640157', 423, '1954-07-29', FALSE, 5);
 
-INSERT INTO livros (id, titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
-VALUES (6, 'A Hora da Estrela', '9788520929977', 96, '1977-10-01', TRUE, 6);
+INSERT INTO livros (titulo, isbn, numeroPaginas, dataPublicacao, disponivel, autor_id)
+VALUES ('A Hora da Estrela', '9788520929977', 96, '1977-10-01', TRUE, 6);
 
 -- ============================================================
 -- EMPRÉSTIMOS
 -- ============================================================
 
-INSERT INTO emprestimos (id, nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
-VALUES (1, 'Lucas Fortes', 'lucas@example.com', '2025-11-01', '2025-11-15', 1);
+INSERT INTO emprestimos (nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
+VALUES ('Lucas Fortes', 'lucas@example.com', '2025-11-01', '2025-11-15', 1);
+
+INSERT INTO emprestimos (nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
+VALUES ('Ana Souza', 'ana@example.com', '2025-11-02', '2025-11-16', 2);
+
+INSERT INTO emprestimos (nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
+VALUES ('Carlos Mendes', 'carlos@example.com', '2025-11-03', '2025-11-17', 5);
+
+INSERT INTO emprestimos (nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
+VALUES ('Mariana Alves', 'mariana@example.com', '2025-11-04', '2025-11-18', 3);
 
 INSERT INTO emprestimos (id, nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
-VALUES (2, 'Ana Souza', 'ana@example.com', '2025-11-02', '2025-11-16', 2);
-
-INSERT INTO emprestimos (id, nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
-VALUES (3, 'Carlos Mendes', 'carlos@example.com', '2025-11-03', '2025-11-17', 5);
-
-INSERT INTO emprestimos (id, nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
-VALUES (4, 'Mariana Alves', 'mariana@example.com', '2025-11-04', '2025-11-18', 3);
-
-INSERT INTO emprestimos (id, nomeUsuario, emailUsuario, dataEmprestimo, dataDevolucaoPrevista, livro_id)
-VALUES (5, 'João Pereira', 'joao@example.com', '2025-11-05', '2025-11-20', 4);
+VALUES ('João Pereira', 'joao@example.com', '2025-11-05', '2025-11-20', 4);

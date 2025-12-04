@@ -104,18 +104,17 @@ public class BibliotecaBean {
         return "/login.xhtml?faces-redirect=true";
     }
 
-@Transactional
-public void realizarEmprestimo(Long livroId) {
-    Livro livro = service.listarTodosLivros().stream()
+    @Transactional
+        public void realizarEmprestimo(Long livroId) {
+        Livro livro = service.listarTodosLivros().stream()
             .filter(l -> l.getId().equals(livroId))
             .findFirst()
             .orElse(null);
 
-    if (livro != null && Boolean.TRUE.equals(livro.getDisponivel())) {
         Emprestimo emprestimo = new Emprestimo(
-                getUsername(),
-                getUsername() + "@example.com",
-                livro
+            getUsername(),
+            getUsername() + "@example.com",
+            livro
         );
 
         livro.setDisponivel(false);
@@ -123,5 +122,23 @@ public void realizarEmprestimo(Long livroId) {
         service.salvarEmprestimo(emprestimo);
         service.atualizarLivro(livro);
     }
-}
+
+    @Transactional
+        public void devolverLivro(Long livroId) {
+        Livro livro = service.listarTodosLivros().stream()
+            .filter(l -> l.getId().equals(livroId))
+            .findFirst()
+            .orElse(null);
+
+        Emprestimo emprestimo = new Emprestimo(
+            getUsername(),
+            getUsername() + "@example.com",
+            livro
+        );
+
+        livro.setDisponivel(true);
+
+        service.salvarEmprestimo(emprestimo);
+        service.atualizarLivro(livro);
+    }
  }
